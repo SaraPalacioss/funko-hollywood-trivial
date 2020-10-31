@@ -48,6 +48,32 @@ class QuestionFemale extends Question {
     }
 }
 
+// ANSWER CLASS: MALE & FEMALE
+
+class Answer {
+    constructor(filmNameAnswer) {
+        this.filmNameAnswer = filmNameAnswer;
+    }
+}
+
+class AnswerMale extends Answer {
+    constructor(actorNameAnswer, filmNameAnswer, characterMaleNameAnswer) {
+        super(filmNameAnswer)
+        this.actorNameAnswer =  actorNameAnswer;
+        this.characterMaleNameAnswer = characterMaleNameAnswer;
+    }
+}
+
+class AnswerFemale extends Answer {
+    constructor(actressNameAnswer, filmNameAnswer, characterFemaleNameAnswer) {
+        super(filmNameAnswer)
+        this.actressNameAnswer =  actressNameAnswer;
+        this.filmNameAnswer = filmNameAnswer;
+        this.characterFemaleNameAnswer = characterFemaleNameAnswer;
+    }
+}
+
+
 // FEMALE DATA SECTION: CHARACTERS & QUESTIONS
 
 const characterFemale1 = new CharacterFemale('/images/pretty_woman.jpg','Julia Roberts','Vivian Ward','Pretty Woman')
@@ -58,6 +84,13 @@ const QuestionFemale1 = new QuestionFemale('¿A qué actriz representa el funko 
 const QuestionFemale2 = new QuestionFemale('¿De qué famosa actriz se trata?','¿En qué película pudimos ver a este personaje?','¿Cuál es el nombre de este personaje en la película que aparece?')
 const QuestionFemale3 = new QuestionFemale('¿Quién es esta actriz?','¿Recuerdas el nombre de la película en la que aparecía este personaje?','¿En esta famosísima película, cómo se llamaba este personaje?')
 const QuestionFemale4 = new QuestionFemale('¿Quién es esta famosa actriz?','Para nota, ¿sabrías decir cuál era el nombre de la película en la que aparecía este personaje?','Haz memoria, ¿cual era el nombre de este personaje?')
+
+const AnswerFemale1 = new AnswerFemale('Susan Sarandon','Sentido y sensibilidad','Bella Swan')
+const AnswerFemale2 = new AnswerFemale('Sharon Stone','Con faldas y a lo loco','Clarice Starling')
+const AnswerFemale3 = new AnswerFemale('Glen Close','Marte','Bella Swan')
+const AnswerFemale4 = new AnswerFemale('Julie Andrews','Los Goonies','Katniss Everdreen')
+
+
 
 
 // MALE DATA SECTION: CHARACTERS & QUESTIONS
@@ -71,6 +104,10 @@ const questionMale2 = new QuestionMale('¿De qué famoso actor se trata?','¿En 
 const questionMale3 = new QuestionMale('¿De qué actor se trata?','¿Recuerdas el nombre de la película en la que aparecía este personaje?','¿En esta famosísima película, cómo se llamaba este personaje?')
 const questionMale4 = new QuestionMale('¿Quién es este famoso actor?','Para nota, ¿sabrías decir cuál era el nombre de la película en la que aparecía este personaje?','Haz memoria, ¿cual era el nombre de este personaje?')
 
+const AnswerMale1 = new AnswerMale('Chuck Norris','American Ganster','Marty McFly')
+const AnswerMale1 = new AnswerMale('Silvester Stalone','El club de la lucha','Derek Vinyard')
+const AnswerMale1 = new AnswerMale('Leonardo Di Caprio','Reservois dog','Alex DeLarge')
+const AnswerMale1 = new AnswerMale('Russel Crowe','Aterriza como puedas','Rhett Butler')
 
 
 
