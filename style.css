@@ -133,7 +133,6 @@ footer {
     background-image: -ms-linear-gradient(top, #F0DBED, #E8C0FF);
     background-image: -o-linear-gradient(top, #F0DBED, #E8C0FF);
     background-image: -webkit-gradient(to bottom, #F0DBED, #E8C0FF);
-    -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     border-radius: 40px;
     text-decoration: none;
@@ -141,6 +140,7 @@ footer {
  }
 
  .answers-btn button:active {
+    color: white;
     border: solid #000000 0;
     background: #F0DBED;
     background-image: -webkit-linear-gradient(top, #F0DBED, #e614a0);
