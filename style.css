@@ -6,6 +6,7 @@ body {
     background: #C33764;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     color: #778899;
     font-family: 'Lobster', serif;   
     display: flex;
@@ -121,6 +122,7 @@ footer {
     display: inline-block;
     cursor: pointer;
     text-align: center;
+    outline:0; 
  }
  
  .answers-btn button:hover {
@@ -135,9 +137,25 @@ footer {
     -moz-border-radius: 40px;
     border-radius: 40px;
     text-decoration: none;
+    outline:0; 
  }
- 
- 
+
+ .answers-btn button:active {
+    border: solid #000000 0;
+    background: #F0DBED;
+    background-image: -webkit-linear-gradient(top, #F0DBED, #e614a0);
+    background-image: -moz-linear-gradient(top, #F0DBED, #e614a0);
+    background-image: -ms-linear-gradient(top, #F0DBED, #e614a0);
+    background-image: -o-linear-gradient(top, #F0DBED, #e614a0);
+    background-image: -webkit-gradient(to bottom, #F0DBED, #e614a0);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    width: 490px;
+    outline:0; 
+ }
+  
 
  .next-btn button {
     -webkit-border-radius: 40px;
@@ -146,31 +164,51 @@ footer {
     height: 28px;
     line-height: 28px;
     color: #778899;
-    width: 112px;
-    font-size: 13px;
+    width: 100px;
+    font-size: 10px;
     font-weight: 100;
     padding: 0;
     background-color: #FFFFFF;
     border: groove #FFFFFF 0;
-    text-decoration: none;
+    text-decoration: underline;
     display: inline-block;
     cursor: pointer;
     text-align: center;
     text-underline-position: below;
+    outline:0; 
  }
  
  .next-btn button:hover {
+    color: white;
     border: solid #000000 0;
-    background: #F0DBED;
-    background-image: -webkit-linear-gradient(top, #F0DBED, #E8C0FF);
-    background-image: -moz-linear-gradient(top, #F0DBED, #E8C0FF);
-    background-image: -ms-linear-gradient(top, #F0DBED, #E8C0FF);
-    background-image: -o-linear-gradient(top, #F0DBED, #E8C0FF);
-    background-image: -webkit-gradient(to bottom, #F0DBED, #E8C0FF);
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-     border-radius: 40px;
+    background: #B7BBDD;
+    background-image: -webkit-linear-gradient(top, #B7BBDD, #111111);
+    background-image: -moz-linear-gradient(top, #B7BBDD, #111111);
+    background-image: -ms-linear-gradient(top, #B7BBDD, #111111);
+    background-image: -o-linear-gradient(top, #B7BBDD, #111111);
+    background-image: -webkit-gradient(to bottom, #B7BBDD, #111111);
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
     text-decoration: none;
+    outline:0; 
+ }
+
+ .next-btn button:active {
+    color: white;
+    border: solid #000000 0;
+    background: #3e1574;
+    background-image: -webkit-linear-gradient(top, #B7BBDD, #3e1574);
+    background-image: -moz-linear-gradient(top, #B7BBDD, #3e1574);
+    background-image: -ms-linear-gradient(top, #B7BBDD, #3e1574);
+    background-image: -o-linear-gradient(top, #B7BBDD, #3e1574);
+    background-image: -webkit-gradient(to bottom, #B7BBDD, #3e1574);
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    text-decoration: none;
+    outline:0; 
+    width: 97px;
  }
 
 
