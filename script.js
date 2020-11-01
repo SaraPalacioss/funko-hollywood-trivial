@@ -1,6 +1,7 @@
 // CHARACTER CLASS: MALE & FEMALE
 class QuestionsAndAnswers {
-    constructor(image, question, answer) {
+    constructor(character, image, question, answer) {
+        this.character = character;
         this.image = image;
         this.question = question;
         this.answer = answer;
@@ -10,9 +11,9 @@ class QuestionsAndAnswers {
 questionsAndAnswersArr = []
 
 
-const questionsAndAnswers1 = new QuestionsAndAnswers('/images/pretty_woman.jpg','¿Cuál es el nombre que tenía este personaje en la película?',['Bella Swan', 'Clarice Starling', 'Vivian'])
-const questionsAndAnswers2 = new QuestionsAndAnswers('/images/pretty_woman.jpg','¿A qué actriz representa el funko de la imagen?',['Julia Roberts', 'Charlize Theron', 'Jessica Chastain'])
-const questionsAndAnswers3 = new QuestionsAndAnswers('/images/pretty_woman.jpg','¿Recuerdas el nombre de la película en la que aparecía este personaje?',['Pretty Woman', 'Taxi Driver', 'Oficial y caballero'])
+const questionsAndAnswers1 = new QuestionsAndAnswers('Julia Roberts','/images/pretty_woman.jpg','¿Cuál es el nombre que tenía este personaje en la película?',['Bella Swan', 'Clarice Starling', 'Vivian Ward'])
+const questionsAndAnswers2 = new QuestionsAndAnswers('Julia Roberts','/images/pretty_woman.jpg','¿A qué actriz representa el funko de la imagen?',['Julia Roberts', 'Charlize Theron', 'Jessica Chastain'])
+const questionsAndAnswers3 = new QuestionsAndAnswers('Julia Roberts','/images/pretty_woman.jpg','¿Recuerdas el nombre de la película en la que aparecía este personaje?',['Pretty Woman', 'Taxi Driver', 'Oficial y caballero'])
 
 
 questionsAndAnswersArr.push(questionsAndAnswers1)
@@ -50,42 +51,48 @@ function randomQuestion (arr) {
 
 randomQuestion(questionsAndAnswersArr)
 
-let selectAnswer =''
 
 
 
 
 
-
-
-
+let character = questionsAndAnswersArr[0].character
+let score = ''
 
 function checkResultBtn1(){
-    if(answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman' ) {
-       console.log('true')
-    } else {
-        console.log('false')
+    switch (character) {
+        case 'Julia Roberts':
+            if(answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman' ) {
+                console.log('true')
+                console.log(document.getElementsByTagName('p'))
+                
+            } else {
+                console.log('false')
+            }break;
     }
 }
-
 
 function checkResultBtn2(){
-    if(answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman' ) {
-       console.log('true')
-    } else {
-        console.log('false')
+    switch (character) {
+        case 'Julia Roberts':
+            if(answer2.innerHTML === 'Clarice Starling' || answer2.innerHTML === 'Charlize Theron' || answer2.innerHTML === 'Taxi Driver'){
+                console.log('false')
+            }
+         break;
     }
-    // if(answer2.innerHTML === 'Clarice Starling' || answer2.innerHTML === 'Charlize Theron' || answer2.innerHTML === 'Taxi Driver'){
-    //     console.log('false')
-    // } else {
-    //     console.log('true')
-    // }
-    // if(answer3.innerHTML === 'Vivian') {
-    //     console.log('true')
-    // } else {
-    //     console.log('false')
-    // }
-
 }
+
+function checkResultBtn3(){
+    switch (character) {
+        case 'Julia Roberts':
+            if(answer3.innerHTML === 'Vivian Ward'){
+                console.log('true')
+            } else {
+                console.log('false')
+            }
+         break;
+    }
+}
+
 
 
