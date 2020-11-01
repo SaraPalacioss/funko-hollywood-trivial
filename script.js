@@ -128,21 +128,26 @@ const AnswerMale4 = new AnswerMale('Russel Crowe','Aterriza como puedas','Rhett 
 
 
 
-function selectRandom(arr){
-    let randomValue = Math.floor(Math.random()*arr.length)
-    return arr[randomValue];
-  }
+
+function actressName(arr){
+    for(let i=0;i<arr.length;i++){
+        console.log(arr[i].actressName)
+        
+    }
+}
+
+actressName(characterFemaleArr)
+
+
+// const random = Math.floor(Math.random() * characterFemaleArr.length);
+// console.log(random, characterFemaleArr[random].actressName);
+
+
+// function selectRandom(arr){
+//     let randomValue = Math.floor(Math.random()*arr.length)
+//     return arr[randomValue];
+//   }
+
+//   selectRandom(actressName(characterFemaleArr))
 
  
-function picker(arr){
-    const picker = '';
-
-    picker.femaleCharacter = selectRandom(characterFemaleArr)
-    picker.femaleQuestion = selectRandom(characterFemaleArr)
-    picker.femalesAnswer = selectRandom(characterFemaleArr)
-
-    return picker 
-  }
-
-
-console.log(picker(arr))
