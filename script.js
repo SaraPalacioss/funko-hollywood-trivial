@@ -6,6 +6,19 @@ class QuestionsAndAnswers {
     }
 }
 
+let question = document.getElementById('question')
+question.innerHTML = ''
+
+
+let answer1 = document.getElementById('btn1')
+answer1.innerHTML=''
+
+let answer2= document.getElementById('btn2')
+answer2.innerHTML=''
+
+let answer3 = document.getElementById('btn3')
+answer3.innerHTML=''
+
 questionsAndAnswersArr = []
 
 
@@ -15,18 +28,36 @@ const questionsAndAnswers3 = new QuestionsAndAnswers('¿Recuerdas el nombre de l
 
 
 questionsAndAnswersArr.push(questionsAndAnswers1)
-questionsAndAnswersArr.push(questionsAndAnswers1)
-questionsAndAnswersArr.push(questionsAndAnswers1)
+questionsAndAnswersArr.push(questionsAndAnswers2)
+questionsAndAnswersArr.push(questionsAndAnswers3)
 
-// function randomQuestion (arr) {
-//     for(let i=0;i<1;i++){
-//         arr.sort(function() {return Math.random() - 0.5})
-//         console.log(arr[i].actressName)
-//         console.log(arr[i].filmName)
-//         console.log(arr[i].characterFemaleName)
-//     }
+function randomQuestion (arr) {
+    for(let i=0;i<1;i++){
+        arr.sort(function() {return Math.random() - 0.5})
+        console.log (arr[i+1].question)
+        question.innerHTML = `${arr[i+1].question}`
+        
+    }
     
-// } 
+} 
+
+
+
+randomQuestion(questionsAndAnswersArr)
+
+
+// function checkResult(){
+//     if(questionsAndAnswersArr.answer === 'Vivian') {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+
+
+
+
 
 
 
