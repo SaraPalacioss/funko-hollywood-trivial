@@ -32,7 +32,12 @@ answer2.innerHTML='';
 let answer3 = document.getElementById('btn3')
 answer3.innerHTML='';
 
-let pic = ''
+let nextBotton = document.getElementById('next1')
+
+let scoreHTML = document.getElementById('score-p')
+
+let lifesHTML = document.getElementById('life-p')
+
 
 
 function randomQuestion (arr) {
@@ -53,46 +58,97 @@ randomQuestion(questionsAndAnswersArr)
 
 
 
+function disableBtns() {
+    answer1.disabled = true
+    answer2.disabled = true
+    answer3.disabled = true
+}
 
+function enableBtns() {
+    answer1.disabled = false
+    answer2.disabled = false
+    answer3.disabled = false
+}
 
 
 let character = questionsAndAnswersArr[0].character
-let score = ''
+
+let score = 0
+let lifes = 5
+
+
+
 
 function checkResultBtn1(){
     switch (character) {
         case 'Julia Roberts':
             if(answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman' ) {
-                console.log('true')
-                console.log(document.getElementsByTagName('p'))
+                scoreHTML.innerHTML = ++score
                 
             } else {
-                console.log('false')
-            }break;
+                
+                substractLifes(lifesHTML)
+
+                
+            }
+            break;
     }
+    disableBtns()
 }
+
+
 
 function checkResultBtn2(){
     switch (character) {
         case 'Julia Roberts':
             if(answer2.innerHTML === 'Clarice Starling' || answer2.innerHTML === 'Charlize Theron' || answer2.innerHTML === 'Taxi Driver'){
-                console.log('false')
+                substractLifes(lifesHTML)
             }
-         break;
+            break;
+        
     }
+    disableBtns()
 }
+
+
+
 
 function checkResultBtn3(){
     switch (character) {
         case 'Julia Roberts':
             if(answer3.innerHTML === 'Vivian Ward'){
-                console.log('true')
+                scoreHTML.innerHTML = ++score
+                
             } else {
-                console.log('false')
-            }
-         break;
+                substractLifes(lifesHTML)
+                }
+            break;
+            
+        }
+        disableBtns()
+    }
+
+ 
+function resetGame() {
+    score = 0
+    lifes = 5
+    scoreHTML.innerHTML = score
+    lifesHTML.innerHTML = lifes
+}
+
+function nextBtn(){
+   
+    randomQuestion(questionsAndAnswersArr)
+    enableBtns()
+    if(lifes <= 0) {
+    resetGame()
     }
 }
 
-
-
+function substractLifes(element){
+    element.innerHTML = --lifes
+    if(lifes <= 0) {
+        question.innerHTML ='Game Over'
+        nextBotton.innerHTML = 'Try again'
+    }
+}
