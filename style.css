@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     margin: auto 150px auto 150px;
+   
 }
 
 .title {
@@ -31,6 +32,7 @@ h1 {
 
 #score p {
     font-family: 'Bowlby One SC', cursive;
+    text-align: left;
 }
 
 header {
@@ -46,16 +48,24 @@ header {
     -webkit-border-radius: 78px 78px 78px 78px;
     border: 0px solid #ffffff;
     padding: 0 35px 15px 0;
-+}
+    width: 100px;
+    height: 150px;
 
+}
 
+#question {
+    height: 20px;
+    font-size: 18px;
+}
 .main-section {
     display: flex;
     justify-content: space-evenly;
-    padding: 100px 0;
+    align-items: center;
     border: 2px solid white;
     border-radius: 15px/45px;
     background-color: white;
+    width: auto;
+    height: 600px;
 }
 
 .container-box {
@@ -85,6 +95,7 @@ footer {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
+    padding-top: 30px;
     color: white;
 }
 
@@ -100,6 +111,9 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    align-content: flex-start;
+    width: 600px;
+    height: 300px;
 }
 
 .answers-btn button {
