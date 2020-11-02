@@ -11,9 +11,9 @@ class QuestionsAndAnswers {
 questionsAndAnswersArr = []
 
 
-const questionsAndAnswers1 = new QuestionsAndAnswers('Julia Roberts','../images/pretty_woman.jpg','¿Cuál es el nombre que tenía este personaje en la película?',['Bella Swan', 'Clarice Starling', 'Vivian Ward'])
-const questionsAndAnswers2 = new QuestionsAndAnswers('Julia Roberts','../images/pretty_woman.jpg','¿A qué actriz representa el funko de la imagen?',['Julia Roberts', 'Charlize Theron', 'Jessica Chastain'])
-const questionsAndAnswers3 = new QuestionsAndAnswers('Julia Roberts','../images/pretty_woman.jpg','¿Recuerdas el nombre de la película en la que aparecía este personaje?',['Pretty Woman', 'Taxi Driver', 'Oficial y caballero'])
+const questionsAndAnswers1 = new QuestionsAndAnswers('Julia Roberts','./images/pretty_woman.jpg','¿Cuál es el nombre que tenía este personaje en la película?',['Bella Swan', 'Clarice Starling', 'Vivian Ward'])
+const questionsAndAnswers2 = new QuestionsAndAnswers('Julia Roberts','./images/pretty_woman.jpg','¿A qué actriz representa el funko de la imagen?',['Julia Roberts', 'Charlize Theron', 'Jessica Chastain'])
+const questionsAndAnswers3 = new QuestionsAndAnswers('Julia Roberts','./images/pretty_woman.jpg','¿Recuerdas el nombre de la película en la que aparecía este personaje?',['Pretty Woman', 'Taxi Driver', 'Oficial y caballero'])
 
 
 questionsAndAnswersArr.push(questionsAndAnswers1)
