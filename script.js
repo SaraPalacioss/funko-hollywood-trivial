@@ -11,15 +11,15 @@ class QuestionsAndAnswers {
 questionsAndAnswersArr = []
 
 dataBaseArr = [
-    ['Julia Roberts', '../images/pretty_woman.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Bella Swan', 'Clarice Starling', 'Vivian Ward']],
-    ['Julia Roberts', '../images/pretty_woman.jpg', '¿A qué actriz representa el funko de la imagen?', ['Julia Roberts', 'Charlize Theron', 'Jessica Chastain']],
-    ['Julia Roberts', '../images/pretty_woman.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Pretty Woman', 'Taxi Driver', 'Oficial y caballero']],
-    ['Geena Davis', '../images/barbara.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Estelle', 'Sharon', 'Barbara']],
-    ['Geena Davis', '../images/barbara.jpg', 'Adivina, adivinanza ¿De qué actriz se trata?', ['Geena Davis', 'Sarah Paulson', 'Emma Thompson']],
-    ['Geena Davis', '../images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Mars Attack', 'Beetlejuice']],
-    ['Marilyn Monroe', '../images/marylin_monroe.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['La tentación vive arriba', 'Con faldas y a lo loco', 'Los caballeros las prefieren rubias']],
-    ['Marilyn Monroe', '../images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las calabazas', 'La reina de la alcachofa']],
-    ['Marilyn Monroe', '../images/marylin_monroe.jpg', '¿En qué año nació nuestra rubia de oro?', ['1932', '1926', '1945']]
+    ['Julia Roberts', './images/pretty_woman.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Bella Swan', 'Clarice Starling', 'Vivian Ward']],
+    ['Julia Roberts', './images/pretty_woman.jpg', '¿A qué actriz representa el funko de la imagen?', ['Julia Roberts', 'Charlize Theron', 'Jessica Chastain']],
+    ['Julia Roberts', './images/pretty_woman.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Pretty Woman', 'Taxi Driver', 'Oficial y caballero']],
+    ['Geena Davis', './images/barbara.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Estelle', 'Sharon', 'Barbara']],
+    ['Geena Davis', './images/barbara.jpg', 'Adivina, adivinanza ¿De qué actriz se trata?', ['Geena Davis', 'Sarah Paulson', 'Emma Thompson']],
+    ['Geena Davis', './images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Mars Attack', 'Beetlejuice']],
+    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['La tentación vive arriba', 'Con faldas y a lo loco', 'Los caballeros las prefieren rubias']],
+    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las calabazas', 'La reina de la alcachofa']],
+    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿En qué año nació nuestra rubia de oro?', ['1932', '1926', '1945']]
 
 ]
 
@@ -232,7 +232,7 @@ function substractLifes(element) {
 
 function startGame() {
     if(playerName.value) {
-        window.location = './HTML/index.html'
+        window.location = './index2.html'
     } else {
         alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR'
     }
