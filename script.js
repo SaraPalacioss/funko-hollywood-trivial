@@ -33,20 +33,9 @@ pushQuestionsAndAnswersArr(dataBaseArr)
 
 let playerName = document.getElementById('input-name')
 
-
-
-
-
 let scoreHTML = document.getElementById('score-p')
 
-
-
-
 let alertNoName = document.getElementById('alertNoName')
-
-
-
-
 
 let question = document.getElementById('question')
 question.innerHTML = '';
@@ -62,17 +51,13 @@ answer3.innerHTML = '';
 
 let nextBotton = document.getElementById('next1')
 
-
 let lifesHTML = document.getElementById('life-p')
 
 let character = questionsAndAnswersArr[0].character
 
+let score = 0
 
-
-
-
-
-
+let lifes = 5
 
 function randomQuestion(arr) {
     arr.sort(function () {
@@ -84,21 +69,14 @@ function randomQuestion(arr) {
     answer2.innerHTML = `${arr[0].answer[1]}`
     answer3.innerHTML = `${arr[0].answer[2]}`
     document.getElementById('pic').src = `${arr[0].image}`
-
-
-
-
 }
 
 randomQuestion(questionsAndAnswersArr)
-
-
 
 function disableBtns() {
     answer1.disabled = true
     answer2.disabled = true
     answer3.disabled = true
-
 }
 
 function enableBtns() {
@@ -107,21 +85,12 @@ function enableBtns() {
     answer3.disabled = false
 }
 
-
-
-let score = 0
-let lifes = 5
-
-
-
-
 function checkResultBtn1() {
     switch (character) {
         case 'Julia Roberts':
             if (answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman') {
                 addScore();
-           
-                
+       
             } else {
                 substractLifes(lifesHTML)
             }
