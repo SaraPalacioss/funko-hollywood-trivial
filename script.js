@@ -1,35 +1,40 @@
 // CHARACTER CLASS: MALE & FEMALE
 class QuestionsAndAnswers {
-    constructor(character, image, question, answer) {
-        this.character = character;
-        this.image = image;
-        this.question = question;
-        this.answer = answer;
+    constructor(_character, _image, _question, _answer, _correctAnswer) {
+        this.character = _character;
+        this.image = _image;
+        this.question = _question;
+        this.answer = _answer;
+        this.correctAnswer = _correctAnswer;
     }
 }
 
 questionsAndAnswersArr = []
 
 dataBaseArr = [
-    ['Julia Roberts', './images/pretty_woman.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Bella Swan', 'Clarice Starling', 'Vivian Ward']],
-    ['Julia Roberts', './images/pretty_woman.jpg', '¿A qué actriz representa el funko de la imagen?', ['Julia Roberts', 'Charlize Theron', 'Jessica Chastain']],
-    ['Julia Roberts', './images/pretty_woman.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Pretty Woman', 'Taxi Driver', 'Oficial y caballero']],
-    ['Geena Davis', './images/barbara.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Estelle', 'Sharon', 'Barbara']],
-    ['Geena Davis', './images/barbara.jpg', 'Adivina, adivinanza ¿De qué actriz se trata?', ['Geena Davis', 'Sarah Paulson', 'Emma Thompson']],
-    ['Geena Davis', './images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Mars Attack', 'Beetlejuice']],
-    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['La tentación vive arriba', 'Con faldas y a lo loco', 'Los caballeros las prefieren rubias']],
-    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las calabazas', 'La reina de la alcachofa']],
-    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿En qué año nació nuestra rubia de oro?', ['1932', '1926', '1945']]
+    ['Julia Roberts', './images/pretty_woman.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Bella Swan', 'Clarice Starling', 'Vivian Ward'],'Vivian Ward'],
+    ['Julia Roberts', './images/pretty_woman.jpg', '¿A qué actriz representa el funko de la imagen?', ['Julia Roberts', 'Charlize Theron', 'Jessica Chastain'], 'Julia Roberts'],
+    ['Julia Roberts', './images/pretty_woman.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Pretty Woman', 'Taxi Driver', 'Oficial y caballero'], 'Pretty Woman'],
+    ['Geena Davis', './images/barbara.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Estelle', 'Sharon', 'Barbara'], 'Barbara'],
+    ['Geena Davis', './images/barbara.jpg', 'Adivina, adivinanza ¿De qué actriz se trata?', ['Geena Davis', 'Sarah Paulson', 'Emma Thompson'], 'Geena David'],
+    ['Geena Davis', './images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Mars Attack', 'Beetlejuice'], 'Beetlejuice'],
+    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['La tentación vive arriba', 'Con faldas y a lo loco', 'Los caballeros las prefieren rubias'], 'La tentación vive arriba'],
+    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las calabazas', 'La reina de la alcachofa'], 'La reina de la alcachofa'],
+    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿En qué año nació nuestra rubia de oro?', ['1932', '1926', '1945'],'1926']
 
 ]
 
+
 function pushQuestionsAndAnswersArr(arr) {   
     for(let i = 0; i < arr.length; i++) {
-        questionsAndAnswersArr.push(new QuestionsAndAnswers(arr[i][0] , arr[i][1], arr[i][2], arr[i][3]))
+        questionsAndAnswersArr.push(new QuestionsAndAnswers(arr[i][0] , arr[i][1], arr[i][2], arr[i][3], arr[i][4]))
     }
 }
 
+
 pushQuestionsAndAnswersArr(dataBaseArr)
+
+
 
 let playerName = document.getElementById('input-name')
 
@@ -53,25 +58,71 @@ let nextBotton = document.getElementById('next1')
 
 let lifesHTML = document.getElementById('life-p')
 
-let character = questionsAndAnswersArr[0].character
+let currentCharacter = '';
 
 let score = 0
 
 let lifes = 5
 
+let currentQuestion = 0
+
+let currentCorrectAnswer = '';
+
+let correctButton = ''
+
 function randomQuestion(arr) {
-    arr.sort(function () {
-        return Math.random() - 0.5
-    })
-    character = questionsAndAnswersArr[0].character
-    question.innerHTML = `${arr[0].question}`
-    answer1.innerHTML = `${arr[0].answer[0]}`
-    answer2.innerHTML = `${arr[0].answer[1]}`
-    answer3.innerHTML = `${arr[0].answer[2]}`
-    document.getElementById('pic').src = `${arr[0].image}`
+    arr.sort(function () {return 0.5 - Math.random()})
 }
 
-randomQuestion(questionsAndAnswersArr)
+function startGame() {
+    if(playerName.value) {
+        window.location = './index2.html'
+    } else {
+        alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR'
+    }
+}
+
+window.onload =  randomQuestion(questionsAndAnswersArr);
+window.onload =  setQuestionsAnswersAndImages(questionsAndAnswersArr, currentQuestion)
+
+
+function setQuestionsAnswersAndImages(arr, _currentQuestion) {
+   
+    currentCharacter = arr[_currentQuestion].character;
+    currentCorrectAnswer = arr[_currentQuestion].correctAnswer;
+    
+    question.innerHTML = `${arr[_currentQuestion].question}`
+    answer1.innerHTML = `${arr[_currentQuestion].answer[0]}`
+    answer2.innerHTML = `${arr[_currentQuestion].answer[1]}`
+    answer3.innerHTML = `${arr[_currentQuestion].answer[2]}`
+    if(answer1.innerHTML === currentCorrectAnswer) {
+        correctButton = answer1
+    }
+    if(answer2.innerHTML === currentCorrectAnswer) {
+        correctButton = answer2
+    }
+    if(answer3.innerHTML === currentCorrectAnswer) {
+        correctButton = answer3
+    }
+    document.getElementById('pic').src = `${arr[_currentQuestion].image}`
+}
+
+function nextQuestion(arr) {
+    currentQuestion++
+    setQuestionsAnswersAndImages(arr, currentQuestion)
+    if(currentQuestion >= arr.length-1) {
+        currentQuestion = 0
+        randomQuestion(arr)   
+    }
+    enableBtns()
+      if (lifes <= 0) {
+        resetGame()
+    }
+    disableColorsBtn()
+}
+
+
+
 
 function disableBtns() {
     answer1.disabled = true
@@ -86,14 +137,14 @@ function enableBtns() {
 }
 
 function checkResultBtn1() {
-    switch (character) {
+    switch (currentCharacter) {
         case 'Julia Roberts':
             if (answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman') {
                 addScore();
        
             } else {
                 substractLifes(lifesHTML)
-            }
+            } 
             break;
         case 'Geena Davis':
             if (answer1.innerHTML === 'Geena Davis') {
@@ -110,17 +161,23 @@ function checkResultBtn1() {
             }
             break;
     }
+    if(correctButton === answer1){
+        setColorGreen(answer1)
+    } else {
+        setColorRed(answer1)
+        setColorGreen(correctButton)
+    }
     disableBtns()
+   
 }
 
 
 
 function checkResultBtn2() {
-    switch (character) {
+    switch (currentCharacter) {
         case 'Julia Roberts':
             if (answer2.innerHTML === 'Clarice Starling' || answer2.innerHTML === 'Charlize Theron' || answer2.innerHTML === 'Taxi Driver') {
                 substractLifes(lifesHTML)
-                answer1.style.backgroundColor = 'yellow'
 
             }
             break;
@@ -138,14 +195,21 @@ function checkResultBtn2() {
             break;
 
     }
+    if(correctButton === answer2){
+        setColorGreen(answer2)
+    } else {
+        setColorRed(answer2)
+        setColorGreen(correctButton)
+    }
     disableBtns()
+   
 }
 
 
 
 
 function checkResultBtn3() {
-    switch (character) {
+    switch (currentCharacter) {
         case 'Julia Roberts':
             if (answer3.innerHTML === 'Vivian Ward') {
                 addScore()
@@ -168,7 +232,14 @@ function checkResultBtn3() {
             }
             break;
     }
+    if(correctButton === answer3){
+        setColorGreen(answer3)
+    } else {
+        setColorRed(answer3)
+        setColorGreen(correctButton)
+    }
     disableBtns()
+   
 }
 
 function addScore() {
@@ -182,14 +253,7 @@ function resetGame() {
     lifesHTML.innerHTML = lifes
 }
 
-function nextBtn() {
 
-    randomQuestion(questionsAndAnswersArr)
-    enableBtns()
-    if (lifes <= 0) {
-        resetGame()
-    }
-}
 
 function substractLifes(element) {
     element.innerHTML = --lifes
@@ -199,41 +263,25 @@ function substractLifes(element) {
     }
 }
 
-function startGame() {
-    if(playerName.value) {
-        window.location = './index2.html'
-    } else {
-        alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR'
-    }
+
+function setColorGreen(_button) {
+    _button.style.backgroundColor = '#00b347';
+    _button.style.color = 'white';
 }
 
 
-function correctAnswer1Color() {
-    answer1.style.backgroundColor = '#00b347';
-    answer1.style.color = 'white';
+function setColorRed(_button) {
+    _button.style.backgroundColor = 'tomato'
+    _button.style.color = 'white';
 }
 
-function correctAnswer2Color() {
-    answer2.style.backgroundColor = '#00b347';
-    answer2.style.color = 'white';
+function disableColorsBtn() {
+    answer1.style.backgroundColor = '#FFFFFF'
+    answer1.style.color = '#778899';
+    answer2.style.backgroundColor = '#FFFFFF'
+    answer2.style.color = '#778899';
+    answer3.style.backgroundColor = '#FFFFFF'
+    answer3.style.color = '#778899';
 }
 
-function correctAnswer3Color() {
-    answer2.style.backgroundColor = '#00b347';
-    answer2.style.color = 'white';
-}
 
-function incorrectAnswer1Color() {
-    answer1.style.backgroundColor = 'tomato';
-    answer1.style.color = 'white';
-}
-
-function incorrectAnswer2Color() {
-    answer2.style.backgroundColor = 'tomato';
-    answer2.style.color = 'white';
-}
-
-function incorrectAnswer3Color() {
-    answer3.style.backgroundColor = 'tomato';
-    answer3.style.color = 'white';
-}
