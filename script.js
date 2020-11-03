@@ -9,6 +9,15 @@ class QuestionsAndAnswers {
     }
 }
 
+class User {
+    constructor(_name, _score, _lifes) {
+        this.name = _name;
+        this.score = _score;
+        this.lifes = _lifes;
+    }
+}
+let user = new User('', 0, 5)
+
 questionsAndAnswersArr = []
 
 dataBaseArr = [
@@ -60,10 +69,6 @@ let lifesHTML = document.getElementById('life-p')
 
 let currentCharacter = '';
 
-let score = 0
-
-let lifes = 5
-
 let currentQuestion = 0
 
 let currentCorrectAnswer = '';
@@ -76,6 +81,7 @@ function randomQuestion(arr) {
 
 function startGame() {
     if(playerName.value) {
+        user.name = playerName.value
         window.location = './index2.html'
     } else {
         alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR'
@@ -105,9 +111,13 @@ function setQuestionsAnswersAndImages(arr, _currentQuestion) {
         correctButton = answer3
     }
     document.getElementById('pic').src = `${arr[_currentQuestion].image}`
+
+disableNextBtn()
+
 }
 
 function nextQuestion(arr) {
+  
     currentQuestion++
     setQuestionsAnswersAndImages(arr, currentQuestion)
     if(currentQuestion >= arr.length-1) {
@@ -115,7 +125,7 @@ function nextQuestion(arr) {
         randomQuestion(arr)   
     }
     enableBtns()
-      if (lifes <= 0) {
+    if(user.lifes <= 0) {
         resetGame()
     }
     disableColorsBtn()
@@ -135,6 +145,16 @@ function enableBtns() {
     answer2.disabled = false
     answer3.disabled = false
 }
+
+
+function disableNextBtn() {
+    nextBotton.disabled = true
+}
+
+function enableNextBtn() {
+    nextBotton.disabled = false
+}
+
 
 function checkResultBtn1() {
     switch (currentCharacter) {
@@ -168,6 +188,7 @@ function checkResultBtn1() {
         setColorGreen(correctButton)
     }
     disableBtns()
+    enableNextBtn()
    
 }
 
@@ -202,7 +223,7 @@ function checkResultBtn2() {
         setColorGreen(correctButton)
     }
     disableBtns()
-   
+    enableNextBtn()
 }
 
 
@@ -239,25 +260,25 @@ function checkResultBtn3() {
         setColorGreen(correctButton)
     }
     disableBtns()
-   
+    enableNextBtn()
 }
 
 function addScore() {
-    scoreHTML.innerHTML = ++score
+    scoreHTML.innerHTML = ++user.score
 }
 
 function resetGame() {
-    score = 0
-    lifes = 5
-    scoreHTML.innerHTML = score
-    lifesHTML.innerHTML = lifes
+    user.score = 0
+    user.lifes = 5
+    scoreHTML.innerHTML = user.score
+    lifesHTML.innerHTML = user.lifes
 }
 
 
 
 function substractLifes(element) {
-    element.innerHTML = --lifes
-    if (lifes <= 0) {
+    element.innerHTML = --user.lifes
+    if (user.lifes <= 0) {
         question.innerHTML = 'Game Over'
         nextBotton.innerHTML = 'Try again'
     }
