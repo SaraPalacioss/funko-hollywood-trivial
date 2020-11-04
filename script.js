@@ -17,31 +17,30 @@ class User {
     }
 }
 
-let user = new User('', 0, 5);
+const user = new User('', 0, 5);
 user.name = localStorage.getItem("NAME");
 
+const playerName = document.getElementById('input-name');
 
-let playerName = document.getElementById('input-name');
+const scoreHTML = document.getElementById('score-p');
 
-let scoreHTML = document.getElementById('score-p');
+const alertNoName = document.getElementById('alertNoName');
 
-let alertNoName = document.getElementById('alertNoName');
-
-let question = document.getElementById('question');
+const question = document.getElementById('question');
 question.innerHTML = '';
 
-let answer1 = document.getElementById('btn1');
+const answer1 = document.getElementById('btn1');
 answer1.innerHTML = '';
 
-let answer2 = document.getElementById('btn2');
+const answer2 = document.getElementById('btn2');
 answer2.innerHTML = '';
 
-let answer3 = document.getElementById('btn3');
+const answer3 = document.getElementById('btn3');
 answer3.innerHTML = '';
 
-let nextBotton = document.getElementById('next1');
+const nextBotton = document.getElementById('next1');
 
-let lifesHTML = document.getElementById('life-p');
+const lifesHTML = document.getElementById('life-p');
 
 let currentCharacter = '';
 
@@ -51,24 +50,47 @@ let currentCorrectAnswer = '';
 
 let correctButton = '';
 
-let finishLog = document.getElementById('finish-log');
+const finishLog = document.getElementById('finish-log');
 
+const button = document.querySelector('button');
 
+const popup = document.querySelector('.popup-wrapper');
+
+const close = document.querySelector('.popup-close');
+
+const getLifes = document.getElementById('get-lifes');
+
+const getLifes2 = document.getElementById('get-lifes2');
+
+const getLifesVideo = document.getElementById('get-life-video');
 
 const questionsAndAnswersArr = [];
 
 const dataBaseArr = [
     ['Julia Roberts', './images/pretty_woman.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Bella Swan', 'Clarice Starling', 'Vivian Ward'],'Vivian Ward'],
-    ['Julia Roberts', './images/pretty_woman.jpg', '¿A qué actriz representa el funko de la imagen?', ['Julia Roberts', 'Charlize Theron', 'Jessica Chastain'], 'Julia Roberts'],
-    ['Julia Roberts', './images/pretty_woman.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Pretty Woman', 'Taxi Driver', 'Oficial y caballero'], 'Pretty Woman'],
-    ['Geena Davis', './images/barbara.jpg', '¿Cuál es el nombre que tenía este personaje en la película?', ['Estelle', 'Sharon', 'Barbara'], 'Barbara'],
-    ['Geena Davis', './images/barbara.jpg', 'Adivina, adivinanza ¿De qué actriz se trata?', ['Geena Davis', 'Sarah Paulson', 'Emma Thompson'], 'Geena Davis'],
     ['Geena Davis', './images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Mars Attack', 'Beetlejuice'], 'Beetlejuice'],
-    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['La tentación vive arriba', 'Con faldas y a lo loco', 'Los caballeros las prefieren rubias'], 'La tentación vive arriba'],
+    ['Audry Hepburn', './images/audry_hepburn.jpg', '¿Con qué famoso actor se repartía los alogios nuestra querida actriz en esta película?', ['Humphrey Bogart', 'George Peppard', 'Jerry Lee Lewis'], 'George Peppard'],
+    ['Michael Keaton', './images/beetlejuice.jpg', '¿Quién interpretaba a este rarísimo personaje?', ['Johnny Deep', 'Alec Baldwin', 'Michael Keaton'], 'Michael Keaton'],
+    ['Tom Hanks', './images/forest_gump.jpg', '¿En que año esuchamos la célebre frase "Tonto es el que hace tonterías"?', ['1994', '1995', '1997'],'1994'],
     ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las calabazas', 'La reina de la alcachofa'], 'La reina de la alcachofa'],
-    ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿En qué año nació nuestra rubia de oro?', ['1932', '1926', '1945'],'1926']
+    ['Charlize Theron', './images/furiosa.jpg', '¿Como se llamaba este personaje?', ['Rabiosa', 'Cabreada', 'Furiosa'],'Furiosa'],
+    ['Robert Downey Jr.', './images/iron_man.jpg', '¿Qué es exactamente lo que lleva en la mano?', ['Guantelete de la Galaxia', 'Guantelete del Infinito', 'Guantelete de la eternidad'],'Guantelete del Infinito'],
+    // ['Jack Nicholson', './images/jack_torrance.jpg', '¿Cómo se llamaba este tipo tan cuerdo?', ['Matt Gorderer', 'Jack Torrance', 'Sloan Kein'],'Jack Torrance'],
+    ['Bruce Willis', './images/john_macclane.jpg', '¿En qué película aparece este personaje?', ['Die Hard', 'The Jackal', 'Looper'],'Die Hard'],
+    ['Uma Thurman', './images/kill_bill.jpg', '¿Cómo conocimos a esta chica buena?', ['The Bride', 'The Girl', 'The Babe'],'The Bride'],
+    ['Al Pacino', './images/michael_corleone.jpg', '¿Cómo se llama el actor que encarnó a este personaje?', ['Robert De Niro', 'Anthony Hopkins', 'Al Pacino'],'Al Pacino'],
+    ['Bill Murray', './images/peter-venkman.jpg', '¿En qué año pudimos ver por primera vez al equipo en acción?', ['1981', '1984', '1987'],'1984'],
+    ['Kate Winslet', './images/rose.jpg', '¿Cómo consiguió salvarse nuestra protagonista?', ['Subida al trozo de una mesa', 'Subida al trozo de un piano', 'Subida al trozo de una puerta'],'Subida al trozo de una puerta'],
+    ['Olivia Newton John', './images/sandy.jpg', '¿A qué instituo iba junto con su querido Danny?', ['Instituto Rydell', 'Instituto Campbell', 'Instituto Cornwell'],'Instituto Rydell'],
+    ['Tony Montana', './images/tony_montana.jpg', '¿Qué director llevó al cine esta obra maestra?', ['Francis Ford Coppola', 'Brian de Palma', 'Martin Scorsese'],'Brian de Palma'],
+    ['Meryl Streep', './images/wanda.jpg', '¿Qué misión casi imposible le pidió a la pobre Andy Sachs?', ['La copia original del guión de Star Wars Episodio IV', 'Una reunión con Kim Jonng-un', 'El manuscrito de Harry Potter y las reliquias de la muerte'],'El manuscrito de Harry Potter y las reliquias de la muerte'],
+    ['Hugh Jackman', './images/wolverine.jpg', '¿Qué material indestuctible compone el cuerpo de nuestro adorado Lobezno?', ['Adamantiumn', 'Vibranium', 'Uru'],'Adamantiumn'],
+    ['Michael J. Fox', './images/michael_j_fox.jpg', '¿Con quién viajaba en el DeLorean?', ['Dr. John Brown', 'Dr. Emmett Brown', 'Dr. Robert Brown'],'Dr. Emmett Brown'],
+    ['Rowan Atkinson', './images/mr-bean.jpg', '¿Cómo se llama este famoso actor británico con tan buen sentido del humor?', ['Rowan Atkinson', 'Robert Pattinson', 'Ronald Dawson'],'Rowan Atkinson']
 ];
 
+
+// FUNCTION TO PUSH DATA IN QUESTIONSANDANSWERS ARRAY
 
 function pushQuestionsAndAnswersArr(arr) {   
     for(let i = 0; i < arr.length; i++) {
@@ -79,30 +101,35 @@ function pushQuestionsAndAnswersArr(arr) {
 pushQuestionsAndAnswersArr(dataBaseArr);
 
 
+// START GAME 
+
 function startGame() {
     if(playerName.value) {
         let userName = playerName.value;
         localStorage.setItem("NAME", userName);
-        window.location = './index2.html'
-     
+        window.location = './index2.html';  
     } else {
-        alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR'
+        alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR';
     }
 }
+
+
+// RANDOM ORDER TO THE QUESTIONS ARRAY
+
 function randomQuestion(arr) {
-    arr.sort(function () {return 0.5 - Math.random()})
+    arr.sort(function () {return 0.5 - Math.random()});
 }
 
+
+// CORRECT ANSWER CHECKER FUNCTION
+
 function setQuestionsAnswersAndImages(arr, _currentQuestion) {
-   
     currentCharacter = arr[_currentQuestion].character;
     currentCorrectAnswer = arr[_currentQuestion].correctAnswer;
-   
     question.innerHTML = `${arr[_currentQuestion].question}`;
     answer1.innerHTML = `${arr[_currentQuestion].answer[0]}`;
     answer2.innerHTML = `${arr[_currentQuestion].answer[1]}`;
     answer3.innerHTML = `${arr[_currentQuestion].answer[2]}`;
-   
     if(answer1.innerHTML === currentCorrectAnswer) {
         correctButton = answer1;
     }
@@ -113,122 +140,140 @@ function setQuestionsAnswersAndImages(arr, _currentQuestion) {
         correctButton = answer3;
     }
     document.getElementById('pic').src = `${arr[_currentQuestion].image}`;
-
-disableNextBtn()
+disableNextBtn();
 }
 
+
+// LOAD RANDOM ORDER QUESTIONS & CORRECT ANSWER CHECKER FUNCTIONS IN INDEX2.HTML
+
 window.onload =  randomQuestion(questionsAndAnswersArr);
-window.onload =  setQuestionsAnswersAndImages(questionsAndAnswersArr, currentQuestion)
+
+window.onload =  setQuestionsAnswersAndImages(questionsAndAnswersArr, currentQuestion);
+
+
+// ADD SCORE 
+
+function addScore() {
+    scoreHTML.innerHTML = ++user.score;
+}
+
+
+// SUBSTRACT LIFES 
+
+function substractLifes(element) {
+    element.innerHTML = --user.lifes;
+}
+
+function winOrLoose(arr) {
+    console.log(currentQuestion)
+    console.log(arr.length)
+    if (user.lifes === 0) {
+        question.innerHTML = `Qué lástima ${user.name}, casi lo consigues`;
+        getLifes.innerHTML = `No pasa nada ${user.name},`;
+        getLifes2.innerHTML = `¿quieres 5 vidas extra?`;
+        getLifesVideo.innerHTML = `Sólo tienes que ver el siguiente video`
+        nextBotton.innerHTML = 'Continue';
+        popUpBlock();
+    } else if (currentQuestion >= arr.length-1) {
+        question.innerHTML = `¡Enhorabuena ${user.name}, has ganado!`;
+        nextBotton.innerHTML = 'Continue';
+    }
+
+
+}
+// GET NEW EXTRA LIFES WATCHING ADD AND CONTINUE GAME 
+
+function gettingLifes() {
+    user.lifes = 5;
+    lifesHTML.innerHTML = user.lifes; 
+    nextBotton.innerHTML = 'Next';
+    popUpNone();
+    nextQuestion(questionsAndAnswersArr);
+    disableNextBtn();
+}
+
+
+// RESET GAME 
+
+function resetGame() {
+    window.location = './index2.html';
+    user.score = 0;
+    user.lifes = 5;
+    scoreHTML.innerHTML = user.score;
+    lifesHTML.innerHTML = user.lifes;  
+}
+
+
+// END GAME 
+
+function endGame() {
+    window.location = './index3.html'; 
+}
+
+
+// EVALUATING ANSWERS
 
 function checkResultBtn1() {
-    switch (currentCharacter) {
-        case 'Julia Roberts':
-            if (answer1.innerHTML === 'Julia Roberts' || answer1.innerHTML === 'Pretty Woman') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            } 
-            break;
-        case 'Geena Davis':
-            if (answer1.innerHTML === 'Geena Davis') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            }
-            break;
-        case 'Marilyn Monroe':
-            if (answer1.innerHTML === 'La tentación vive arriba') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            }
-            break;
-    }
     if(correctButton === answer1){
         setColorGreen(answer1);
+        addScore();
     } else {
         setColorRed(answer1);
         setColorGreen(correctButton);
+        substractLifes(lifesHTML);
     }
     disableBtns();
     enableNextBtn();
+    winOrLoose(questionsAndAnswersArr);
 }
 
 function checkResultBtn2() {
-    switch (currentCharacter) {
-        case 'Julia Roberts':
-            if (answer2.innerHTML === 'Clarice Starling' || answer2.innerHTML === 'Charlize Theron' || answer2.innerHTML === 'Taxi Driver') {
-                substractLifes(lifesHTML);
-            }
-            break;
-        case 'Geena Davis':
-            if (answer2.innerHTML === 'Sharon' || answer2.innerHTML === 'Sarah Paulson' || answer2.innerHTML === 'Mars Attack') {
-                substractLifes(lifesHTML);
-            }
-            break;
-        case 'Marilyn Monroe':
-            if (answer2.innerHTML === 'Con faldas y a la loco' || answer2.innerHTML === '1926') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            }
-            break;
-    }
     if(correctButton === answer2){
         setColorGreen(answer2);
+        addScore();
     } else {
         setColorRed(answer2);
         setColorGreen(correctButton);
+        substractLifes(lifesHTML);
     }
     disableBtns();
     enableNextBtn();
+    winOrLoose(questionsAndAnswersArr);
 }
 
 function checkResultBtn3() {
-    switch (currentCharacter) {
-        case 'Julia Roberts':
-            if (answer3.innerHTML === 'Vivian Ward') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            }
-            break;
-        case 'Geena Davis':
-            if (answer3.innerHTML === 'Beetlejuice' || answer3.innerHTML === 'Barbara') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            }
-            break;
-        case 'Marilyn Monroe':
-            if (answer3.innerHTML === 'La reina de la alcachofa') {
-                addScore();
-            } else {
-                substractLifes(lifesHTML);
-            }
-            break;
-    }
     if(correctButton === answer3){
         setColorGreen(answer3);
+        addScore();
     } else {
         setColorRed(answer3);
         setColorGreen(correctButton);
+        substractLifes(lifesHTML);
     }
     disableBtns();
     enableNextBtn();
+    winOrLoose(questionsAndAnswersArr);
 }
+
+
+// NEXT BUTTON ACTIONS
 
 function nextQuestion(arr) {
     currentQuestion++
-    if(currentQuestion >= arr.length-1 || user.lifes <= 0) {
+    if(currentQuestion >= arr.length || user.lifes === 0) {
+        console.log(user.lifes)
+        console.log(currentQuestion)
+        console.log(arr.length)
       endGame();    
     } else {
-    setQuestionsAnswersAndImages(arr, currentQuestion)
+    setQuestionsAnswersAndImages(arr, currentQuestion);
     enableBtns();
     disableColorsBtn();
     }
 }
 
+
+// ENABLE/DISABLE BUTTONS
 
 function disableBtns() {
     answer1.disabled = true;
@@ -250,33 +295,13 @@ function enableNextBtn() {
     nextBotton.disabled = false;
 }
 
-function addScore() {
-    scoreHTML.innerHTML = ++user.score;
-}
 
-function resetGame() {
-    window.location = './index2.html';
-    user.score = 0;
-    user.lifes = 5;
-    scoreHTML.innerHTML = user.score;
-    lifesHTML.innerHTML = user.lifes;  
-}
-
-function substractLifes(element) {
-    element.innerHTML = --user.lifes
-    if (user.lifes <= 0) {
-        question.innerHTML = `Qué lástima ${user.name}, casi lo consigues`
-        nextBotton.innerHTML = 'Continue'
-    }
-}
-
-
+// SET COLOR TO BUTTONS FOR CORRECT/INCORRECT ANSWERS
 
 function setColorGreen(_button) {
     _button.style.backgroundColor = '#00b347';
     _button.style.color = 'white';
 }
-
 
 function setColorRed(_button) {
     _button.style.backgroundColor = 'tomato';
@@ -292,30 +317,23 @@ function disableColorsBtn() {
     answer3.style.color = '#778899';
 }
 
-function endGame() {
-    window.location = './index3.html'; 
+
+// POP UP FOR GET LIFES/WIN GAME
+
+function popUpBlock() {
+    popup.style.display = 'block'
+}
+    
+function popUpNone() {
+    popup.style.display = 'none'     
 }
 
-
-$(document).ready(function() 
-                  {
-		 $("#openVideo").fancybox({
-           'closeBtn':false,
-           'openEffect': 'fade',
-           helpers   : { 
-   overlay : {closeClick: false} // prevents closing when clicking OUTSIDE fancybox 
-  }
-         });
-        
-        //simulamos click y abrimos fancybox
-        $("#openVideo").eq(0).trigger("click");
-  
-        //forzamos play
-        document.getElementById('myvideo').play();      
-	});
-
-    function popup(URL) {
-        day = new Date();
-        id = day.getTime();
-        eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=640,height=400');");
-        }
+close.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+ 
+popup.addEventListener('click', e => {
+    if(e.target.className === 'popup-wrapper') {
+        popup.style.display = 'none';
+    }
+});
