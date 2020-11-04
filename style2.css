@@ -6,7 +6,6 @@ body {
     background: #C33764;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
     color: #778899;
     font-family: 'Lobster', serif;   
     display: flex;
@@ -27,12 +26,15 @@ body {
 
 h1 {
     font-size: 5rem;
+}
+
+h1 a {
+    text-decoration: none;
     color: white;
 }
 
 #score p {
     font-family: 'Bowlby One SC', cursive;
-    text-align: left;
 }
 
 header {
@@ -43,10 +45,7 @@ header {
     font-size: 15px;
     display: flex;
     align-self: flex-end;
-    border-radius: 78px 78px 78px 78px;
-    -moz-border-radius: 78px 78px 78px 78px;
-    -webkit-border-radius: 78px 78px 78px 78px;
-    border: 0px solid #ffffff;
+    text-align: right;
     padding: 0 35px 15px 0;
     width: 100px;
     height: 150px;
@@ -210,6 +209,4 @@ footer {
     outline:0; 
     width: 97px;
  }
-
-
 
