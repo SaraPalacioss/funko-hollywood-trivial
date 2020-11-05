@@ -73,7 +73,7 @@ const dataBaseArr = [
     ['Michael Keaton', './images/beetlejuice.jpg', '¿Quién interpretaba a este rarísimo personaje?', ['Johnny Deep', 'Alec Baldwin', 'Michael Keaton'], 'Michael Keaton'],
     ['Tom Hanks', './images/forest_gump.jpg', '¿En qué año escuchamos la célebre frase "Tonto es el que hace tonterías"?', ['1994', '1995', '1997'],'1994'],
     ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las espinacas', 'La reina de la alcachofa'], 'La reina de la alcachofa'],
-    ['Charlize Theron', './images/furiosa.jpg', '¿Cómo se llamaba este personaje?', ['Rabiosa', 'Cabreada', 'Furiosa'],'Furiosa'],
+    ['Charlize Theron', './images/furiosa.jpg', '¿Cómo se llamaba este personaje?', ['Rabiosa', 'Furiosa', 'Cabreada'],'Furiosa'],
     ['Robert Downey Jr.', './images/iron_man.jpg', '¿Qué es exactamente lo que lleva en la mano?', ['Guantelete de la Galaxia', 'Guantelete del Infinito', 'Guantelete de la Eternidad'],'Guantelete del Infinito'],
     ['Jack Nicholson', './images/jack_torrance.jpg', '¿Cómo se llamaba este tipo tan cuerdo?', ['Matt Gorderer', 'Jack Torrance', 'Sloan Kein'],'Jack Torrance'],
     ['Bruce Willis', './images/john_macclane.jpg', '¿En qué película aparece este personaje?', ['Die Hard', 'The Jackal', 'Looper'],'Die Hard'],
