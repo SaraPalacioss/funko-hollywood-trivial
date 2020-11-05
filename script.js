@@ -163,7 +163,6 @@ const substractLifes = (element) => {element.innerHTML = --user.lifes;}
 const winOrLoose = (arr) => {
     if (user.lifes === 0) {
         question.innerHTML = `Qué lástima ${user.name}, casi lo consigues`;
-        question.style.color = 'black';
         getLifes.innerHTML = `No pasa nada ${user.name},`;
         getLifes2.innerHTML = `¿quieres 3 vidas extra?`;
         getLifesVideo.innerHTML = `Sólo tienes que ver el siguiente video`
