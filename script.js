@@ -74,7 +74,7 @@ const dataBaseArr = [
     ['Tom Hanks', './images/forest_gump.jpg', '¿En qué año escuchamos la célebre frase "Tonto es el que hace tonterías"?', ['1994', '1995', '1997'],'1994'],
     ['Marilyn Monroe', './images/marylin_monroe.jpg', '¿Con que nombre de un suculento vegetal era conocida esta actriz?', ['La princesa de las judias', 'La dama de las espinacas', 'La reina de la alcachofa'], 'La reina de la alcachofa'],
     ['Charlize Theron', './images/furiosa.jpg', '¿Cómo se llamaba este personaje?', ['Rabiosa', 'Cabreada', 'Furiosa'],'Furiosa'],
-    ['Robert Downey Jr.', './images/iron_man.jpg', '¿Qué es exactamente lo que lleva en la mano?', ['Guantelete de la Galaxia', 'Guantelete del Infinito', 'Guantelete de la eternidad'],'Guantelete del Infinito'],
+    ['Robert Downey Jr.', './images/iron_man.jpg', '¿Qué es exactamente lo que lleva en la mano?', ['Guantelete de la Galaxia', 'Guantelete del Infinito', 'Guantelete de la Eternidad'],'Guantelete del Infinito'],
     ['Jack Nicholson', './images/jack_torrance.jpg', '¿Cómo se llamaba este tipo tan cuerdo?', ['Matt Gorderer', 'Jack Torrance', 'Sloan Kein'],'Jack Torrance'],
     ['Bruce Willis', './images/john_macclane.jpg', '¿En qué película aparece este personaje?', ['Die Hard', 'The Jackal', 'Looper'],'Die Hard'],
     ['Uma Thurman', './images/kill_bill.jpg', '¿Cómo conocimos a esta chica buena?', ['The Bride', 'The Girl', 'The Babe'],'The Bride'],
@@ -163,6 +163,7 @@ const substractLifes = (element) => {element.innerHTML = --user.lifes;}
 const winOrLoose = (arr) => {
     if (user.lifes === 0) {
         question.innerHTML = `Qué lástima ${user.name}, casi lo consigues`;
+        question.style.color = 'black';
         getLifes.innerHTML = `No pasa nada ${user.name},`;
         getLifes2.innerHTML = `¿quieres 3 vidas extra?`;
         getLifesVideo.innerHTML = `Sólo tienes que ver el siguiente video`
