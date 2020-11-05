@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Gruppo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Lobster&display=swap');
+
 body {
     background: #C33764;  
     background: -webkit-linear-gradient(to right, #1D2671, #C33764);  
@@ -93,9 +94,9 @@ footer {
     cursor: pointer;
     text-align: center;
     outline:0; 
- }
+}
 
- #start-btn:hover {
+#start-btn:hover {
     border: solid #000000 0;
     background: #F0DBED;
     background-image: -webkit-linear-gradient(top, #F0DBED, #E8C0FF);
@@ -107,9 +108,9 @@ footer {
     border-radius: 40px;
     text-decoration: none;
     outline:0; 
- }
+}
 
- #start-btn:active {
+#start-btn:active {
     color: white;
     border: solid #000000 0;
     background: #F0DBED;
@@ -124,7 +125,7 @@ footer {
     text-decoration: none;
     width: 98px;
     outline:0; 
- }
+}
 
 #alert-no-name {
     color: coral;
@@ -139,7 +140,7 @@ footer {
 
 
 
- 
+
 
 
 
