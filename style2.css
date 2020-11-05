@@ -95,6 +95,20 @@ footer {
     text-align: center;
     outline:0; 
  }
+
+ .answers-btn button:hover {	
+    border: solid #000000 0;	
+    background: #F0DBED;	
+    background-image: -webkit-linear-gradient(top, #F0DBED, #E8C0FF);	
+    background-image: -moz-linear-gradient(top, #F0DBED, #E8C0FF);	
+    background-image: -ms-linear-gradient(top, #F0DBED, #E8C0FF);	
+    background-image: -o-linear-gradient(top, #F0DBED, #E8C0FF);	
+    background-image: -webkit-gradient(to bottom, #F0DBED, #E8C0FF);	
+    -moz-border-radius: 40px;	
+    border-radius: 40px;	
+    text-decoration: none;	
+    outline:0; 	
+ }
  
  .answers-btn button:active {
     color: white;
