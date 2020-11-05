@@ -12,16 +12,11 @@ body {
     flex-direction: column;
     justify-content: space-around;
     margin: auto 150px auto 150px;
-   
 }
 
-.title {
+header {
     display: flex;
-    justify-content: flex-start
-}
-
-.title img {
-    width: 50px;
+    flex-direction: column;
 }
 
 h1 {
@@ -33,29 +28,27 @@ h1 a {
     color: white;
 }
 
-#score p {
-    font-family: 'Bowlby One SC', cursive;
+button {
+    margin: 10px;
 }
 
-header {
+footer {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: white;
 }
-#score {
-    font-size: 15px;
+
+.title {
     display: flex;
-    align-self: flex-end;
-    text-align: right;
-    padding: 0 35px 15px 0;
-    width: 150px;
-    height: 150px;
-
+    justify-content: flex-start
 }
 
-#question {
-    height: 20px;
-    font-size: 18px;
+.title img {
+    width: 50px;
 }
+
 .main-section {
     display: flex;
     justify-content: space-evenly;
@@ -78,41 +71,6 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
-
-button {
-    margin: 10px;
-
-}
-
-.next-btn {
-    display: flex;
-    justify-content: center;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    color: white;
-}
-
-.funko-cards img {
-    box-shadow: 0px 3px 32px -14px rgba(255,255,255,1);
-    border-radius: 18px 18px 18px 18px;
-    border: 5px plain #ffffff;
-    width: 300px;
-}
-
-.q-a-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-    width: 600px;
-    height: 300px;
 }
 
 .answers-btn button {
@@ -154,9 +112,13 @@ footer {
     width: 520px;
     outline:0; 
  }
-  
 
- .next-btn button {
+.next-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.next-btn button {
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     border-radius: 40px;
@@ -175,7 +137,6 @@ footer {
     text-align: center;
     text-underline-position: below;
     outline:0; 
-    
  }
  
  .next-btn button:hover {
@@ -211,6 +172,22 @@ footer {
     width: 125px;
  }
 
+.funko-cards img {
+    box-shadow: 0px 3px 32px -14px rgba(255,255,255,1);
+    border-radius: 18px 18px 18px 18px;
+    border: 5px plain #ffffff;
+    width: 300px;
+}
+
+.q-a-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    width: 600px;
+    height: 300px;
+}
 
 .popup-wrapper {
     background: rgba(0, 0, 0, 0.5);
@@ -242,7 +219,6 @@ footer {
     display: block;
     width: 50%;
 }
-
  
 .popup a:hover {
     background: palevioletred;
@@ -256,3 +232,23 @@ footer {
     cursor: pointer;
     font-size: 1.5rem;
 }
+
+#score p {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#score {
+    font-size: 15px;
+    display: flex;
+    align-self: flex-end;
+    text-align: right;
+    padding: 0 35px 15px 0;
+    width: 150px;
+    height: 150px;
+}
+
+#question {
+    height: 20px;
+    font-size: 18px;
+}
+
