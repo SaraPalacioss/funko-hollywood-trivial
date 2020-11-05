@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Lobster&display=swap');
 body {
-    background: #C33764;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #C33764; 
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  
+    background: linear-gradient(to right, #1D2671, #C33764); 
     color: #778899;
     font-family: 'Lobster', serif;   
     display: flex;
@@ -95,25 +95,12 @@ footer {
     text-align: center;
     outline:0; 
  }
-
- .answers-btn button:hover {	
-    border: solid #000000 0;	
-    background: #F0DBED;	
-    background-image: -webkit-linear-gradient(top, #F0DBED, #E8C0FF);	
-    background-image: -moz-linear-gradient(top, #F0DBED, #E8C0FF);	
-    background-image: -ms-linear-gradient(top, #F0DBED, #E8C0FF);	
-    background-image: -o-linear-gradient(top, #F0DBED, #E8C0FF);	
-    background-image: -webkit-gradient(to bottom, #F0DBED, #E8C0FF);	
-    -moz-border-radius: 40px;	
-    border-radius: 40px;	
-    text-decoration: none;	
-    outline:0; 	
- }
  
  .answers-btn button:active {
-    color: white;
+  
     border: solid #000000 0;
     background: #F0DBED;
+    color: #778899;
     background-image: -webkit-linear-gradient(top, #F0DBED, #e614a0);
     background-image: -moz-linear-gradient(top, #F0DBED, #e614a0);
     background-image: -ms-linear-gradient(top, #F0DBED, #e614a0);
@@ -123,7 +110,7 @@ footer {
     -moz-border-radius: 40px;
     border-radius: 40px;
     text-decoration: none;
-    width: 520px;
+    width: 495px;
     outline:0; 
  }
 

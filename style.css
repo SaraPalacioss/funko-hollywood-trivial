@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Lobster&display=swap');
 body {
-    background: #C33764;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #C33764;  
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);  
+    background: linear-gradient(to right, #1D2671, #C33764); 
     color: #778899;
     font-family: 'Lobster', serif;   
     display: flex;
@@ -18,9 +18,9 @@ body {
 
 h1 {
     font-size: 5rem;
-    color: #C33764;  /* fallback for old browsers */
-    color: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
-    color: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #C33764;  
+    color: -webkit-linear-gradient(to right, #1D2671, #C33764); 
+    color: linear-gradient(to right, #1D2671, #C33764); 
 }
 
 footer {

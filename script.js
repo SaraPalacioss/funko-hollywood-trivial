@@ -68,7 +68,7 @@ const questionsAndAnswersArr = [];
 
 const dataBaseArr = [
     ['Julia Roberts', './images/pretty_woman.jpg', '¿Qué nombre tenía este personaje en la película?', ['Susan Parson', 'Gloria Smith', 'Vivian Ward'],'Vivian Ward'],
-    ['Geena Davis', './images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Mars Attack', 'Beetlejuice'], 'Beetlejuice'],
+    ['Geena Davis', './images/barbara.jpg', '¿Recuerdas el nombre de la película en la que aparecía este personaje?', ['Los Goonies', 'Beetlejuice', 'Mars Attack'], 'Beetlejuice'],
     ['Audry Hepburn', './images/audry_hepburn.jpg', '¿Con qué famoso actor se repartía los elogios nuestra querida actriz en esta película?', ['Humphrey Bogart', 'George Peppard', 'Jerry Lee Lewis'], 'George Peppard'],
     ['Michael Keaton', './images/beetlejuice.jpg', '¿Quién interpretaba a este rarísimo personaje?', ['Johnny Deep', 'Alec Baldwin', 'Michael Keaton'], 'Michael Keaton'],
     ['Tom Hanks', './images/forest_gump.jpg', '¿En qué año escuchamos la célebre frase "Tonto es el que hace tonterías"?', ['1994', '1995', '1997'],'1994'],
@@ -81,10 +81,10 @@ const dataBaseArr = [
     ['Al Pacino', './images/michael_corleone.jpg', '¿Cómo se llama el actor que encarnó a este personaje?', ['Robert De Niro', 'Anthony Hopkins', 'Al Pacino'],'Al Pacino'],
     ['Bill Murray', './images/peter-venkman.jpg', '¿En qué año pudimos ver por primera vez al equipo en acción?', ['1979', '1981', '1984'],'1984'],
     ['Kate Winslet', './images/rose.jpg', '¿Cómo consiguió salvarse nuestra protagonista?', ['Subida al trozo de una mesa', 'Subida al trozo de un piano', 'Subida al trozo de una puerta'],'Subida al trozo de una puerta'],
-    ['Olivia Newton John', './images/sandy.jpg', '¿A qué instituto iba junto con su querido Danny?', ['Instituto Rydell', 'Instituto Campbell', 'Instituto Cornwell'],'Instituto Rydell'],
+    ['Olivia Newton John', './images/sandy.jpg', '¿A qué instituto iba junto con su querido Danny?', ['Instituto Campbell', 'Instituto Rydell', 'Instituto Cornwell'],'Instituto Rydell'],
     ['Tony Montana', './images/tony_montana.jpg', '¿Qué director llevó al cine esta obra maestra?', ['Francis Ford Coppola', 'Brian de Palma', 'Martin Scorsese'],'Brian de Palma'],
     ['Meryl Streep', './images/wanda.jpg', '¿Qué misión casi imposible le pidió a la pobre Andy Sachs?', ['La copia original del guión de Star Wars Episodio IV', 'Una reunión con Kim Jonng-un', 'El manuscrito de Harry Potter y las reliquias de la muerte'],'El manuscrito de Harry Potter y las reliquias de la muerte'],
-    ['Hugh Jackman', './images/wolverine.jpg', '¿Qué material indestructible compone el cuerpo de nuestro adorado Lobezno?', ['Adamantiumn', 'Vibranium', 'Uru'],'Adamantiumn'],
+    ['Hugh Jackman', './images/wolverine.jpg', '¿Qué material indestructible compone el cuerpo de nuestro adorado Lobezno?', ['Vibranium', 'Adamantium', 'Uru'],'Adamantiumn'],
     ['Michael J. Fox', './images/michael_j_fox.jpg', '¿Con quién viajaba en el DeLorean?', ['Dr. John Brown', 'Dr. Emmett Brown', 'Dr. Robert Brown'],'Dr. Emmett Brown'],
     ['Rowan Atkinson', './images/mr-bean.jpg', '¿Cómo se llama este famoso actor británico con tan buen sentido del humor?', ['Rowan Atkinson', 'Robert Pattinson', 'Ronald Dawson'],'Rowan Atkinson']
 ];
@@ -161,8 +161,6 @@ const addScore = () => {scoreHTML.innerHTML = ++user.score;}
 const substractLifes = (element) => {element.innerHTML = --user.lifes;}
 
 const winOrLoose = (arr) => {
-    console.log(currentQuestion)
-    console.log(arr.length)
     if (user.lifes === 0) {
         question.innerHTML = `Qué lástima ${user.name}, casi lo consigues`;
         getLifes.innerHTML = `No pasa nada ${user.name},`;
@@ -257,9 +255,6 @@ const checkResultBtn3 = () => {
 const nextQuestion = (arr) => {
     currentQuestion++
     if(currentQuestion >= arr.length || user.lifes === 0) {
-        console.log(user.lifes)
-        console.log(currentQuestion)
-        console.log(arr.length)
       endGame();    
     } else {
     setQuestionsAnswersAndImages(arr, currentQuestion);
