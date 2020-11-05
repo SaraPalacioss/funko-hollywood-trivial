@@ -84,7 +84,7 @@ const dataBaseArr = [
     ['Olivia Newton John', './images/sandy.jpg', '¿A qué instituto iba junto con su querido Danny?', ['Instituto Campbell', 'Instituto Rydell', 'Instituto Cornwell'],'Instituto Rydell'],
     ['Tony Montana', './images/tony_montana.jpg', '¿Qué director llevó al cine esta obra maestra?', ['Francis Ford Coppola', 'Brian de Palma', 'Martin Scorsese'],'Brian de Palma'],
     ['Meryl Streep', './images/wanda.jpg', '¿Qué misión casi imposible le pidió a la pobre Andy Sachs?', ['La copia original del guión de Star Wars Episodio IV', 'Una reunión con Kim Jonng-un', 'El manuscrito de Harry Potter y las reliquias de la muerte'],'El manuscrito de Harry Potter y las reliquias de la muerte'],
-    ['Hugh Jackman', './images/wolverine.jpg', '¿Qué material indestructible compone el cuerpo de nuestro adorado Lobezno?', ['Vibranium', 'Adamantium', 'Uru'],'Adamantiumn'],
+    ['Hugh Jackman', './images/wolverine.jpg', '¿Qué material indestructible compone el cuerpo de nuestro adorado Lobezno?', ['Vibranium', 'Adamantium', 'Uru'],'Adamantium'],
     ['Michael J. Fox', './images/michael_j_fox.jpg', '¿Con quién viajaba en el DeLorean?', ['Dr. John Brown', 'Dr. Emmett Brown', 'Dr. Robert Brown'],'Dr. Emmett Brown'],
     ['Rowan Atkinson', './images/mr-bean.jpg', '¿Cómo se llama este famoso actor británico con tan buen sentido del humor?', ['Rowan Atkinson', 'Robert Pattinson', 'Ronald Dawson'],'Rowan Atkinson']
 ];
