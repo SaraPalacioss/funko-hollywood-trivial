@@ -27,7 +27,7 @@ body {
 
 h1 a {
     text-decoration: none;
-    color: #C33764;  /* fallback for old browsers */
+    color: #C33764; 
     color: -webkit-linear-gradient(to right, #1D2671, #C33764); 
     color: linear-gradient(to right, #1D2671, #C33764); 
     }
