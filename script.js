@@ -107,7 +107,7 @@ function startGame() {
     if(playerName.value) {
         let userName = playerName.value;
         localStorage.setItem("NAME", userName);
-        window.location = './index2.html';  
+        window.location = './game-page-index.html';  
     } else {
         alertNoName.innerHTML = 'POR FAVOR, INTRODUCE UN NOMBRE PARA PODER CONTINUAR';
     }
@@ -144,7 +144,7 @@ disableNextBtn();
 }
 
 
-// LOAD RANDOM ORDER QUESTIONS & CORRECT ANSWER CHECKER FUNCTIONS IN INDEX2.HTML
+// LOAD RANDOM ORDER QUESTIONS & CORRECT ANSWER CHECKER FUNCTIONS IN GAME PAGE INDEX.HTML
 
 window.onload =  randomQuestion(questionsAndAnswersArr);
 
@@ -193,7 +193,7 @@ const gettingLifes = () => {
 // RESET GAME 
 
 function resetGame () {
-    window.location = './index2.html';
+    window.location = './game-page-index.html';
     user.score = 0;
     user.lifes = 3;
     scoreHTML.innerHTML = user.score;
@@ -203,7 +203,7 @@ function resetGame () {
 
 // END GAME 
 
-const endGame = () => {window.location = './index3.html';}
+const endGame = () => {window.location = './final-game-page-index.html';}
 
 
 // EVALUATING ANSWERS

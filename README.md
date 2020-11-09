@@ -6,6 +6,8 @@ Como su nombre indica, "Funko Hollywood Trivial" es un juego de preguntas de cin
 
 Para poder jugar, tan solo intenta responder a las preguntas formuladas tomando como partida el funko que aparece a la izquierda de la pantalla. Se comienza con 0 puntos y 3 vidas por lo que el objetivo está claro, conseguir el mayor número de puntos sin quedarse sin vidas (*spoiler: tenemos la oportunidad de conseguir alguna vida por el camino si nos quedamos a 0...😝)
 
+GitHub Pages URL https://sarapalacioss.github.io/funko-hollywood-trivial/
+
 ![ScreenShot](https://raw.githubusercontent.com/SaraPalacioss/funko-hollywood-trivial/main/images/screenshoot.png)
 
 
