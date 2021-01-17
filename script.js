@@ -166,7 +166,7 @@ const winOrLoose = (arr) => {
         question.style.color = '#778899';
         getLifes.innerHTML = `No pasa nada ${user.name},`;
         getLifes2.innerHTML = `¿quieres 3 vidas extra?`;
-        getLifesVideo.innerHTML = `Sólo tienes que ver el siguiente video`
+        getLifesVideo.innerHTML = `Sólo tienes que visualizar el siguiente contenido`
         nextBotton.innerHTML = 'Continue';
         popUpBlock();
     } else if (currentQuestion >= arr.length-1) {
